@@ -1,4 +1,4 @@
-package com.example.javaWebDemo.crawler;
+package com.example.web.crawler;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;

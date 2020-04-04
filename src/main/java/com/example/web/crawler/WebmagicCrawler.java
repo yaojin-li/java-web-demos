@@ -1,4 +1,4 @@
-package com.example.javaWebDemo.crawler;
+package com.example.web.crawler;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
