@@ -1,4 +1,4 @@
-package com.example.web.demo;
+package com.example.web.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,17 +10,17 @@ import com.google.common.util.concurrent.RateLimiter;
 /**
  * @Description: 测试 Guava 限流组件 RateLimiter
  * 依赖：
- *         <dependency>
- *             <groupId>com.google.guava</groupId>
- *             <artifactId>guava</artifactId>
- *             <version>20.0</version>
- *         </dependency>
+ * <dependency>
+ * <groupId>com.google.guava</groupId>
+ * <artifactId>guava</artifactId>
+ * <version>20.0</version>
+ * </dependency>
  *
- *         <dependency>
- *             <groupId>org.apache.commons</groupId>
- *             <artifactId>commons-lang3</artifactId>
- *             <version>3.2.1</version>
- *         </dependency>
+ * <dependency>
+ * <groupId>org.apache.commons</groupId>
+ * <artifactId>commons-lang3</artifactId>
+ * <version>3.2.1</version>
+ * </dependency>
  * --------------------------------------
  * @ClassName: TestRateLimiter.java
  * @Date: 2019/10/10 19:57
@@ -29,13 +29,16 @@ import com.google.common.util.concurrent.RateLimiter;
  * @Author: lixj
  * @Contact: lixj_zj@163.com
  **/
-public class RateLimiterTest {
+public class RateLimiterController {
     public static void main(String[] args) {
+        // 每秒钟3个令牌放入桶
+        double count = 3.0;
+
         // 构建线程池
         ExecutorService exec = Executors.newCachedThreadPool();
 
         // 速率：每秒限制3个许可（即每秒钟3个令牌放入桶）
-        final RateLimiter rateLimiter = RateLimiter.create(3.0);
+        final RateLimiter rateLimiter = RateLimiter.create(count);
 
         for (int i = 0; i < 100; i++) {
             final int num = i;
